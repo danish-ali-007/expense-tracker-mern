@@ -2,10 +2,11 @@ const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-// Register
 exports.registerUser = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    let { name, email, password } = req.body;
+
+    email = email.toLowerCase().trim();
 
     const userExists = await User.findOne({ email });
 
@@ -39,6 +40,7 @@ exports.registerUser = async (req, res) => {
         email: user.email,
       },
     });
+
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -49,7 +51,9 @@ exports.registerUser = async (req, res) => {
 // Login
 exports.loginUser = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    let { email, password } = req.body;
+
+    email = email.toLowerCase().trim();
 
     const user = await User.findOne({ email });
 
@@ -88,10 +92,8 @@ exports.loginUser = async (req, res) => {
     });
 
   } catch (error) {
-
     res.status(500).json({
       message: error.message,
     });
-
   }
 };

@@ -1,0 +1,15 @@
+@media(max-width:768px){
+
+.analytics{
+
+padding:15px;
+
+}
+
+.chart-container{
+
+overflow-x:auto;
+
+}
+
+}

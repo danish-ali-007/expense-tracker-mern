@@ -1,0 +1,120 @@
+.table-container{
+    width:100%;
+    background:#fff;
+    margin-top:30px;
+    padding:20px;
+    border-radius:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+}
+
+table{
+    width:100%;
+    min-width:700px;
+    border-collapse:collapse;
+}
+
+thead tr{
+    background:#4f46e5;
+}
+
+th{
+    color:#fff;
+    padding:16px;
+    text-align:left;
+    font-size:15px;
+}
+
+td{
+    padding:16px;
+    border-bottom:1px solid #eee;
+}
+
+.edit-btn,
+.delete-btn{
+    padding:8px 14px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.edit-btn{
+    background:#3b82f6;
+    color:#fff;
+    margin-right:8px;
+}
+
+.delete-btn{
+    background:#ef4444;
+    color:#fff;
+}
+
+@media (max-width:768px){
+
+.table-container{
+    padding:10px;
+    overflow-x: hidden;
+}
+
+table{
+    min-width:100%;
+}
+
+th,
+td{
+    padding:10px;
+    font-size:13px;
+    white-space:nowrap;
+}
+
+.edit-btn,
+.delete-btn{
+    padding:6px 10px;
+    font-size:12px;
+}
+
+}
+@media (max-width:768px){
+
+table,
+thead,
+tbody,
+th,
+td,
+tr{
+    display:block;
+}
+
+thead{
+    display:none;
+}
+
+tr{
+    background:#fff;
+    margin-bottom:15px;
+    border-radius:12px;
+    padding:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+td{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border:none;
+    padding:10px 0;
+    white-space:normal;
+}
+
+td::before{
+    content:attr(data-label);
+    font-weight:bold;
+    color:#4f46e5;
+}
+
+.edit-btn,
+.delete-btn{
+    margin-top:5px;
+}
+}

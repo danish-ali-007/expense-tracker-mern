@@ -17,6 +17,8 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/expenses", expenseRoutes);
 
+console.log(process.env.MONGO_URI);
+
 // MongoDB Connection
 mongoose
   .connect(process.env.MONGO_URI)
